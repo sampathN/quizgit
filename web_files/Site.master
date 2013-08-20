@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %></title>
+    <link href="Styles/Site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <script src='<%=ResolveUrl("Scripts/jquery-1.8.1.min.js")%>' type="text/javascript"></script>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server" />
+        <div id="wrapper" class="content-wrapper">
+            <header>
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p class="site-title"><a runat="server" href="~/">Your Company logo</a></p>
+                    </div>
+                    <div class="float-right">
+                    </div>
+                </div>
+            </header>
+            <div id="body">
+                <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+                <section class="content-wrapper main-content clear-fix">
+                    <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                </section>
+            </div>
+            <footer>
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p>
+                            &copy; <%: DateTime.Now.Year %> - All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
